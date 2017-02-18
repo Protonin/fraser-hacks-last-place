@@ -39,6 +39,8 @@ public class FloydWarshall {
 			paths[thing1][thing2] = thing1;
 		}
 		System.out.println("Input done.");
+		
+		a = convertMatrix(a);
 		// Here lieth the api import code
 		for (int x = 0; x < n; x++)
 		{
@@ -64,7 +66,7 @@ public class FloydWarshall {
 					{
 						continue;
 					}
-					if (a[y][z] > a[y][x] + a[x][z])
+					if (a[y][z] < a[y][x] + a[x][z])
 					{
 						a[y][z] = a[y][x] + a[x][z];
 						paths[y][z] = paths[x][z];
@@ -117,5 +119,16 @@ public class FloydWarshall {
 			System.out.println(paths[start][stop]);
 			tracePath(start, paths[start][stop]);
 		}
+	}
+	public static double[][] convertMatrix (double[][] matrix)
+	{
+		for (int x = 0; x < matrix.length; x++)
+		{
+			for (int y = 0; y < matrix[x].length; y++)
+			{
+				matrix[x][y] = Math.log10(1.0/matrix[x][y]);
+			}
+		}
+		return matrix;
 	}
 }
