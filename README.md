@@ -1,3 +1,2 @@
 # fraser-hacks-(second)-last-place
-  Joseph sux at chess
-  Fardin focus pls
+  Created by Joseph Hung, Fardin Syed, Katie Chen, and Tiger Kong
